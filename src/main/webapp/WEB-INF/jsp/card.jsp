@@ -13,35 +13,41 @@
 <html>
 <head>
     <title>Title</title>
-<%--    <link href="../css/style.css" rel="stylesheet" type="text/css">--%>
-    <style><%@include file="../css/style.css"%></style>
+    <%--    <link href="../css/style.css" rel="stylesheet" type="text/css">--%>
+    <style>
+        <%@include file="../css/style.css" %>
+    </style>
 </head>
 <body>
 <%
     CardDVO cardDVO = (CardDVO) request.getAttribute("cardById");
 %>
 <div class="create-box">
-    <div class="create-box_header">Відвідування</div>
+    <div class="create-box_header">Пацієнт</div>
     <div class="create-form visiting">
-        <label><span>Прізвище</span>
-        <input type="text" name="lastName" value="<%=cardDVO.getLastName()%>">
-    </label>
-       <label> <span>Ім'я</span>
-        <input type="text" name="firstName" value="<%=cardDVO.getFirstName()%>">
-    </label>
-       <label> <span>По-батькові</span>
-        <input type="text" name="middleName" value="<%=cardDVO.getMiddleName()%>">
-    </label>
-        <label><span>Hомер телефону</span>
-        <input type="text" name="phoneNumber" value="<%=cardDVO.getPhoneNumber()%>">
-    </label>
-       <label> <span>Адреса</span>
-        <input type="text" name="address" value="<%=cardDVO.getAddress()%>">
-    </label>
-        <label><span>Місце роботи</span>
-        <input type="text" name="workPlace" value="<%=cardDVO.getWorkPlace()%>">
-    </label>
-        <a href="<spring:url value="/cards/all"/>" class="btn-return">Назад</a>
+        <form method="post" action="/doctors/update">
+
+            <label><span>Прізвище</span>
+                <input type="text" name="lastName" value="<%=cardDVO.getLastName()%>">
+            </label>
+            <label> <span>Ім'я</span>
+                <input type="text" name="firstName" value="<%=cardDVO.getFirstName()%>">
+            </label>
+            <label> <span>По-батькові</span>
+                <input type="text" name="middleName" value="<%=cardDVO.getMiddleName()%>">
+            </label>
+            <label><span>Hомер телефону</span>
+                <input type="text" name="phoneNumber" value="<%=cardDVO.getPhoneNumber()%>">
+            </label>
+            <label> <span>Адреса</span>
+                <input type="text" name="address" value="<%=cardDVO.getAddress()%>">
+            </label>
+            <label><span>Місце роботи</span>
+                <input type="text" name="workPlace" value="<%=cardDVO.getWorkPlace()%>">
+            </label>
+<%--            <button type="submit" class="btn-return">Зберегти</button>--%>
+            <a href="<spring:url value="/cards/all"/>" class="btn-return">Назад</a>
+        </form>
     </div>
 
 </div>
@@ -69,7 +75,7 @@
     %>
 
     <%
-        if (visitList==null) {
+        if (visitList == null) {
             visitList = new ArrayList<>();
         }
         for (VisitDVO v : visitList) {
@@ -85,7 +91,7 @@
             <spring:url value="/visit/{id}" var="editUrl" htmlEscape="true">
                 <spring:param name="id" value="<%=v.getId().toString()%>"/>
             </spring:url>
-            <button type="button" onclick="location.href='${editUrl}'">Редагувати</button>
+<%--            <button type="button" onclick="location.href='${editUrl}'">Редагувати</button>--%>
             <form action="card.jsp" method="post">
                 <spring:url value="/visit/delete?visitId={visitId}&cardId={cardId}" var="deleteUrl" htmlEscape="true">
                     <spring:param name="cardId" value="<%=cardDVO.getId().toString()%>"/>

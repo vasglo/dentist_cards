@@ -17,8 +17,8 @@
 <div class="create-box">
     <div class="create-box_header">Створити пацієнта</div>
     <form action="<spring:url value="/cards/create"/>" method="post" class="create-form" >
-        Ім'я : <input type="text" name="firstName" />
         Прізвище : <input type="text" name="lastName" />
+        Ім'я : <input type="text" name="firstName" />
         По-батькові : <input type="text" name="middleName" />
         Номер телефону : <input type="text" name="phoneNumber" />
         Адреса : <input type="text" name="address" />
