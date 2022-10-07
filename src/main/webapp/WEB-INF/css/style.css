@@ -1,26 +1,133 @@
-body
-{
-    background-color: bisque;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-h1
-{
-    color:orange;
-    text-align:center;
-}
-p
-{
-    font-family: "Times New Roman", serif;
-    font-size:20px;
-}
+
 
 table
 {
 color: black;
-    width: 60%;
+    /*width: 60%;*/
     margin: 0 auto;
+    border-collapse: collapse;
+}
+th,td{
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #04AA6D;
+    color: white;
+    text-align: center;
+}
+td button{
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 2px;
 }
 
-tr:nth-child(2)
-{
-width: 100px;
+.create-box{
+    width: 450px;
+    border: 1px solid gray;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+.create-box_header{
+    background-color: #04AA6D;
+    margin: -15px -15px 15px -15px;
+    height: 46px;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+    line-height: 46px;
+    font-size: 20px;
+    color: white;
+}
+
+.create-form{
+    display: flex;
+    flex-direction: column;
+}
+.create-form input{
+    height: 30px;
+    margin: 6px 0;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid darkgray;
+}
+
+input[type='submit']{
+    background-color: #04AA6D;
+    height: 39px;
+    color: white;
+    font-size: 20px;
+}
+
+.btn-return{
+    border: 1px solid black;
+    display: block;
+    width: 418px;
+    height: 33px;
+    text-align: center;
+    padding: 2px 0;
+    text-decoration: none;
+    border-radius: 4px;
+    color: black;
+    font-size: 20px;
+    line-height: 27px;
+}
+.head-wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+}
+.head-wrapper_select{
+    display: flex;
+    flex-wrap: wrap;
+    width: 270px;
+}
+
+.head-wrapper_select select{
+    margin-bottom: 6px;
+}
+
+.head-wrapper_select input[type='search']{
+    margin: 0 9px 5px 47px;
+}
+
+.btn-head{
+    width: 121px;
+    display: inline-block;
+    height: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 25px;
+    color: #04AA6D;
+    border: 1px solid gray;
+}
+.btn-head:hover{
+    color: white;
+    background-color: #04AA6D;
+}
+.btn-reset{
+    text-decoration: none;
+}
+.head-doctors{
+    margin: 20px auto;
+    width: 249px;
+}
+label input{
+    margin-left: 30px;
+    width: 286px;
+}
+label span{
+    width: 128px;
+    display: inline-block;
 }

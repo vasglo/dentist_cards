@@ -14,14 +14,17 @@
 
 </head>
 <body>
-<a href="<spring:url value="/doctors/all"/>">Назад</a>
-<form action="<spring:url value="/doctors/create"/>" method="post" >
-    Ім'я : <input type="text" name="firstName" />
-    Прізвище : <input type="text" name="lastName" />
-    По-батькові : <input type="text" name="middleName" />
-    Номер телефону : <input type="text" name="phoneNumber" />
-    Адреса : <input type="text" name="address" />
-    <input type="submit" />
-</form>
+<div class="create-box">
+    <div class="create-box_header">Додати лікаря</div>
+    <form action="<spring:url value="/doctors/create"/>" method="post" class="create-form" >
+        Ім'я : <input type="text" name="firstName" />
+        Прізвище : <input type="text" name="lastName" />
+        По-батькові : <input type="text" name="middleName" />
+        Номер телефону : <input type="text" name="phoneNumber" />
+        Адреса : <input type="text" name="address" />
+        <input type="submit" />
+    </form>
+    <a href="<spring:url value="/doctors/all"/>" class="btn-return">Назад</a>
+</div>
 </body>
 </html>
