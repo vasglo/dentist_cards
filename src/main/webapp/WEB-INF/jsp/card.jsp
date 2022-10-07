@@ -20,29 +20,33 @@
 <%
     CardDVO cardDVO = (CardDVO) request.getAttribute("cardById");
 %>
-Прізвище<label>
-    <input type="text" name="lastName" value="<%=cardDVO.getLastName()%>">
-</label>
-Ім'я<label>
-    <input type="text" name="firstName" value="<%=cardDVO.getFirstName()%>">
-</label>
-По-батькові<label>
-    <input type="text" name="middleName" value="<%=cardDVO.getMiddleName()%>">
-</label>
-Номер телефону<label>
-    <input type="text" name="phoneNumber" value="<%=cardDVO.getPhoneNumber()%>">
-</label>
-Адрес<label>
-    <input type="text" name="address" value="<%=cardDVO.getAddress()%>">
-</label>
-Місце роботи<label>
-    <input type="text" name="workPlace" value="<%=cardDVO.getWorkPlace()%>">
-</label>
-<a href="<spring:url value="/cards/all"/>">Назад</a>
-<br>
-Відвідування
+<div class="create-box">
+    <div class="create-box_header">Відвідування</div>
+    <div class="create-form visiting">
+        <label><span>Прізвище</span>
+        <input type="text" name="lastName" value="<%=cardDVO.getLastName()%>">
+    </label>
+       <label> <span>Ім'я</span>
+        <input type="text" name="firstName" value="<%=cardDVO.getFirstName()%>">
+    </label>
+       <label> <span>По-батькові</span>
+        <input type="text" name="middleName" value="<%=cardDVO.getMiddleName()%>">
+    </label>
+        <label><span>Hомер телефону</span>
+        <input type="text" name="phoneNumber" value="<%=cardDVO.getPhoneNumber()%>">
+    </label>
+       <label> <span>Адреса</span>
+        <input type="text" name="address" value="<%=cardDVO.getAddress()%>">
+    </label>
+        <label><span>Місце роботи</span>
+        <input type="text" name="workPlace" value="<%=cardDVO.getWorkPlace()%>">
+    </label>
+        <a href="<spring:url value="/cards/all"/>" class="btn-return">Назад</a>
+    </div>
 
-<table border="1">
+</div>
+
+<table>
     <thead>
     <tr>
         <th>#</th>

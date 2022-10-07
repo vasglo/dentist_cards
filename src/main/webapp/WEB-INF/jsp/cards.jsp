@@ -41,27 +41,33 @@
         }
     }
 %>
-<a href="<spring:url value="/doctors/all"/>">Лікарі</a>
-<a href="<spring:url value="/cards/create"/>">Створити картку</a>
-<form>
-    Лікар :<select id="mySelect" onchange="nameF()" name="doctorId">
-    <%
-        Long doctorId = (Long) request.getAttribute("doctorId");
-        for (Map.Entry<Long, String> el : map.entrySet()) {
-    %>
-    <option value="<%=el.getKey()%>" <%if(el.getKey().equals(doctorId)){%>selected<%}%>><%=el.getValue()%>
-    </option>
-    <%
-        }
-    %>
-</select>
-</form>
-<a href="<spring:url value="/cards/all"/>">Скинути</a>
-<br>
-<form>
-    <input type="search" id="search" name="lastName" onchange="nameF()">
-</form>
-<table border="1">
+<div class="head-wrapper">
+    <div class="head-wrapper_href">
+        <a href="<spring:url value="/cards/create"/>" class="btn-head">Створити картку</a>
+        <a href="<spring:url value="/doctors/all"/>" class="btn-head">Лікарі</a>
+    </div>
+    <div class="head-wrapper_select">
+        <form>
+            Лікар :<select id="mySelect" onchange="nameF()" name="doctorId">
+            <%
+                Long doctorId = (Long) request.getAttribute("doctorId");
+                for (Map.Entry<Long, String> el : map.entrySet()) {
+            %>
+            <option value="<%=el.getKey()%>" <%if(el.getKey().equals(doctorId)){%>selected<%}%>><%=el.getValue()%>
+            </option>
+            <%
+                }
+            %>
+        </select>
+        </form>
+        <form>
+            <input type="search" id="search" name="lastName" onchange="nameF()">
+        </form>
+        <a href="<spring:url value="/cards/all"/>" class="btn-reset">&#8855;</a>
+    </div>
+</div>
+
+<table>
     <thead>
     <tr>
         <th>#</th>

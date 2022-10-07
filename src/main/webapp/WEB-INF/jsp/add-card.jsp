@@ -14,15 +14,19 @@
 
 </head>
 <body>
-<a href="<spring:url value="/cards/all"/>">Назад</a>
-<form action="<spring:url value="/cards/create"/>" method="post" >
-    Ім'я : <input type="text" name="firstName" />
-    Прізвище : <input type="text" name="lastName" />
-    По-батькові : <input type="text" name="middleName" />
-    Номер телефону : <input type="text" name="phoneNumber" />
-    Адреса : <input type="text" name="address" />
-    Місце роботи : <input type="text" name="workPlace" />
-    <input type="submit" />
-</form>
+<div class="create-box">
+    <div class="create-box_header">Створити пацієнта</div>
+    <form action="<spring:url value="/cards/create"/>" method="post" class="create-form" >
+        Ім'я : <input type="text" name="firstName" />
+        Прізвище : <input type="text" name="lastName" />
+        По-батькові : <input type="text" name="middleName" />
+        Номер телефону : <input type="text" name="phoneNumber" />
+        Адреса : <input type="text" name="address" />
+        Місце роботи : <input type="text" name="workPlace" />
+        <input type="submit" />
+    </form>
+    <a href="<spring:url value="/cards/all"/>" class="btn-return">Назад</a>
+</div>
+
 </body>
 </html>

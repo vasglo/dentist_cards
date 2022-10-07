@@ -16,10 +16,12 @@
 
 </head>
 <body>
-<a href="<spring:url value="/cards/all"/>">Картки</a>
-<a href="<spring:url value="/doctors/create"/>">Додати лікаря</a>
+<div class="head-doctors">
+    <a href="<spring:url value="/cards/all"/>" class="btn-head">Картки</a>
+    <a href="<spring:url value="/doctors/create"/>" class="btn-head">Додати лікаря</a>
+</div>
 
-<table border="1">
+<table>
     <thead>
     <tr>
         <th>#</th>

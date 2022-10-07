@@ -38,24 +38,29 @@
 <spring:url value="/cards/{cardId}" var="card" htmlEscape="true">
     <spring:param name="cardId" value="<%=card.getId().toString()%>"/>
 </spring:url>
-<a href="${card}">Назад</a>
-<form action="<spring:url value="/visit"/>" method="post" >
-    Дата : <input type="date" id="datepicker" autocomplete="off" name="date" />
-    Опис роботи : <input type="text" name="workDesc" />
-    Зуб : <input type="text" name="teeth" />
-    Сума : <input type="text" name="sum" />
-    Пацієнт : <input type="text" disabled value="<%=card.getLastName()%>"/>
-            <input type="text" hidden name="cardId" value="<%=card.getId()%>"/>
-    Лікар :<select name="doctorId">
-    <%
-        for (Map.Entry<Long,String> el: map.entrySet()) {
-    %>
-    <option value="<%=el.getKey()%>"><%=el.getValue()%></option>
-    <%
-    }
-    %>
-</select>
-    <input type="submit" />
-</form>
+
+<div class="create-box">
+
+    <div class="create-box_header">Створити відвідування</div>
+    <form action="<spring:url value="/visit"/>" method="post" class="create-form" >
+        Дата : <input type="date" id="datepicker" autocomplete="off" name="date" />
+        Опис роботи : <input type="text" name="workDesc" />
+        Зуб : <input type="text" name="teeth" />
+        Сума : <input type="text" name="sum" />
+        Пацієнт : <input type="text" disabled value="<%=card.getLastName()%>"/>
+        <input type="text" hidden name="cardId" value="<%=card.getId()%>"/>
+        Лікар :<select name="doctorId">
+        <%
+            for (Map.Entry<Long,String> el: map.entrySet()) {
+        %>
+        <option value="<%=el.getKey()%>"><%=el.getValue()%></option>
+        <%
+            }
+        %>
+    </select>
+        <input type="submit" />
+    </form>
+    <a href="${card}" class="btn-return">Назад</a>
+</div>
 </body>
 </html>
