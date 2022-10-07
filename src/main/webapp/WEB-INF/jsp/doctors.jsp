@@ -12,7 +12,9 @@
 <html>
 <head>
     <title>Title</title>
-    <style><%@include file="../css/style.css"%></style>
+    <style>
+        <%@include file="../css/style.css" %>
+    </style>
 
 </head>
 <body>
@@ -40,7 +42,8 @@
     %>
 
     <%
-        for (DoctorDVO d : list) {
+        if (list != null) {
+            for (DoctorDVO d : list) {
     %>
     <tr>
         <td><%=i++%></td>
@@ -53,7 +56,7 @@
             <spring:url value="/doctors/{id}" var="editUrl" htmlEscape="true">
                 <spring:param name="id" value="<%=d.getId().toString()%>"/>
             </spring:url>
-            <button type="button" onclick="location.href='${editUrl}'">Редагувати</button>
+<%--            <button type="button" onclick="location.href='${editUrl}'">Редагувати</button>--%>
             <form action="card.jsp" method="post">
                 <spring:url value="/doctors/delete?doctorId={doctorId}" var="deleteUrl" htmlEscape="true">
                     <spring:param name="doctorId" value="<%=d.getId().toString()%>"/>
@@ -63,6 +66,7 @@
         </td>
     </tr>
     <%
+            }
         }
     %>
     </tbody>
